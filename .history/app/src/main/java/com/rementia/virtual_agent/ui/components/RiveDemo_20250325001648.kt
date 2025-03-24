@@ -34,7 +34,6 @@ import kotlin.random.Random
 import java.lang.System.gc
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.coroutineScope
 
 /**
  * Riveアニメーションを表示するためのComposable関数
@@ -181,7 +180,7 @@ private suspend fun startGazeFollowingEffect(
     isAnimating: MutableState<Boolean>,
     riveViewRef: MutableState<RiveAnimationView?>,
     stateMachineName: String
-) = coroutineScope {
+) {
     var xPos = 0f
     val screenWidth = Resources.getSystem().displayMetrics.widthPixels
     var direction = 1f
